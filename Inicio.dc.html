@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>HEXORA · Inicio</title>
+<script src="./_runtime/react.js"></script>
+<script src="./_runtime/react-dom.js"></script>
+<script src="./_runtime/support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#F4F5F2}
+a{color:#1F5F4A}a:hover{color:#123D2F}
+</style>
+</helmet>
+<div style="min-height: 100vh; display: flex; flex-wrap: wrap; font-family: 'IBM Plex Sans', system-ui, sans-serif; color: #1B1F1D; background: #F4F5F2; font-size: 14px; font-variant-numeric: tabular-nums">
+  <div style="flex: 1 1 220px; max-width: 232px"><dc-import name="Nav" active="inicio" hint-size="232px,960px"></dc-import></div>
+  <main style="flex: 999 1 560px; min-width: 0; display: flex; flex-direction: column">
+    <header style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px; padding: 12px 28px; background: #FFFFFF; border-bottom: 1px solid #DCDFD9">
+      <a href="Login.dc.html" style="display: flex; align-items: center; gap: 8px; height: 40px; padding: 0 12px; border: 1px solid #DCDFD9; border-radius: 6px; color: #1B1F1D; text-decoration: none"><span style="width: 24px; height: 24px; border-radius: 4px; background: #1F5F4A; color: #FFFFFF; font-size: 11px; font-weight: 600; display: flex; align-items: center; justify-content: center">CA</span>Comercial Andina Demo S.A.S.</a>
+      <label style="flex: 1 1 320px; display: flex; align-items: center; gap: 8px; height: 40px; padding: 0 12px; border: 1px solid #DCDFD9; border-radius: 6px; background: #F9FAF8; color: #5C635F"><span style="position: absolute; left: -9999px">Buscar</span><input type="search" placeholder="Buscar cliente, factura, comprobante o contrato" style="flex: 1; border: 0; background: transparent; font: inherit; color: #1B1F1D; outline: none"><kbd style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; padding: 2px 6px; border: 1px solid #DCDFD9; border-radius: 4px; background: #FFFFFF">Ctrl K</kbd></label>
+      <span style="width: 40px; height: 40px; border-radius: 50%; background: #E6EFEA; color: #123D2F; font-weight: 600; display: flex; align-items: center; justify-content: center" aria-label="María Ramírez">MR</span>
+    </header>
+    <section style="padding: 24px 28px; display: flex; flex-direction: column; gap: 20px">
+      <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 12px">
+        <div>
+          <div style="font-size: 12px; color: #5C635F">Corte 22 nov 2026 · COP</div>
+          <h1 style="margin: 4px 0 0; font-size: 24px; font-weight: 600">Buenas tardes, María</h1>
+        </div>
+        <span style="font-size: 13px; color: #5C635F">Cada indicador abre el detalle que lo explica</span>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1px; background: #DCDFD9; border: 1px solid #DCDFD9; border-radius: 8px; overflow: hidden">
+        <a href="Cartera.dc.html" style="background: #FFFFFF; padding: 18px; color: #1B1F1D; text-decoration: none"><div style="font-size: 12px; color: #5C635F">Saldo por cobrar</div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 22px; margin-top: 8px">64.010.000</div><div style="font-size: 12px; color: #A33A1A; margin-top: 4px">38.060.000 vencido · 59,5 %</div></a>
+        <a href="Tesoreria.dc.html" style="background: #FFFFFF; padding: 18px; color: #1B1F1D; text-decoration: none"><div style="font-size: 12px; color: #5C635F">Disponible en bancos y caja</div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 22px; margin-top: 8px">142.380.000</div><div style="font-size: 12px; color: #5C635F; margin-top: 4px">3 cuentas · 3 partidas sin conciliar</div></a>
+        <a href="Inmobiliaria.dc.html" style="background: #FFFFFF; padding: 18px; color: #1B1F1D; text-decoration: none"><div style="font-size: 12px; color: #5C635F">Ocupación inmobiliaria</div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 22px; margin-top: 8px">23 / 25</div><div style="font-size: 12px; color: #5C635F; margin-top: 4px">2 contratos vencen en 30 días</div></a>
+        <a href="Nomina.dc.html" style="background: #FFFFFF; padding: 18px; color: #1B1F1D; text-decoration: none"><div style="font-size: 12px; color: #5C635F">Nómina 2.ª quincena nov</div><div style="font-family: 'IBM Plex Mono', monospace; font-size: 22px; margin-top: 8px">48 empleados</div><div style="font-size: 12px; color: #8A4B08; margin-top: 4px">Preliquidación · 1 propuesta por revisar</div></a>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px">
+        <section style="grid-column: span 2; background: #FFFFFF; border: 1px solid #DCDFD9; border-radius: 8px; padding: 20px; display: flex; flex-direction: column; gap: 14px">
+          <div style="display: flex; justify-content: space-between; align-items: baseline"><h2 style="margin: 0; font-size: 15px">Antigüedad de cartera</h2><a href="Cartera.dc.html" style="font-size: 13px">Ver cartera</a></div>
+          <sc-for list="{{ tramos }}" as="t" hint-placeholder-count="5">
+            <div style="display: grid; grid-template-columns: 110px 1fr 120px; gap: 12px; align-items: center">
+              <span style="color: #5C635F">{{ t.label }}</span>
+              <div style="height: 12px; background: #EEF0EC; border-radius: 3px"><div style="{{ t.bar }}"></div></div>
+              <span style="text-align: right; font-family: 'IBM Plex Mono', monospace">{{ t.valor }}</span>
+            </div>
+          </sc-for>
+        </section>
+        <section style="background: #FFFFFF; border: 1px solid #DCDFD9; border-radius: 8px; padding: 20px; display: flex; flex-direction: column; gap: 10px">
+          <h2 style="margin: 0 0 4px; font-size: 15px">Pendientes de hoy</h2>
+          <sc-for list="{{ pendientes }}" as="p" hint-placeholder-count="4">
+            <a href="{{ p.href }}" style="display: flex; flex-direction: column; gap: 2px; padding: 10px 12px; border: 1px solid #ECEEEA; border-radius: 6px; color: #1B1F1D; text-decoration: none">
+              <span style="font-weight: 500">{{ p.titulo }}</span>
+              <span style="font-size: 12px; color: #5C635F">{{ p.detalle }}</span>
+            </a>
+          </sc-for>
+        </section>
+      </div>
+      <section style="background: #FFFFFF; border: 1px solid #DCDFD9; border-radius: 8px; padding: 20px">
+        <h2 style="margin: 0 0 12px; font-size: 15px">Actividad reciente</h2>
+        <div style="overflow-x: auto">
+          <table style="width: 100%; border-collapse: collapse; font-size: 13px; min-width: 640px">
+            <tbody>
+              <sc-for list="{{ actividad }}" as="a" hint-placeholder-count="4">
+                <tr>
+                  <td style="padding: 9px 0; border-bottom: 1px solid #ECEEEA; color: #5C635F; width: 120px">{{ a.hora }}</td>
+                  <td style="padding: 9px 0; border-bottom: 1px solid #ECEEEA; font-family: 'IBM Plex Mono', monospace; width: 120px">{{ a.doc }}</td>
+                  <td style="padding: 9px 0; border-bottom: 1px solid #ECEEEA">{{ a.texto }}</td>
+                  <td style="padding: 9px 0; border-bottom: 1px solid #ECEEEA; text-align: right; color: #5C635F">{{ a.quien }}</td>
+                </tr>
+              </sc-for>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </section>
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":960}}'>
+class Component extends DCLogic {
+  renderVals() {
+    var max = 25950000;
+    var colors = { a: '#3E7C64', b: '#C99A3A', c: '#C46A1E', d: '#A33A1A', e: '#A33A1A' };
+    var t = [
+      ['Por vencer', 25950000, colors.a], ['1 – 30 días', 11260000, colors.b], ['31 – 60 días', 23800000, colors.c],
+      ['61 – 90 días', 3000000, colors.d], ['Más de 90', 0, colors.e]
+    ];
+    return {
+      tramos: t.map(function (x) {
+        return { label: x[0], valor: x[1].toLocaleString('es-CO'), bar: 'height: 12px; border-radius: 3px; background: ' + x[2] + '; width: ' + Math.round(x[1] / max * 100) + '%' };
+      }),
+      pendientes: [
+        { titulo: 'Ferretería El Prado · 45 días', detalle: 'FV-2031 · 14.200.000 vencido', href: 'Cartera.dc.html' },
+        { titulo: 'Conciliar cuenta ···4521', detalle: '3 movimientos sin cruzar', href: 'Tesoreria.dc.html' },
+        { titulo: 'Revisar propuesta de auxilio', detalle: 'Nómina · 2.ª quincena', href: 'Nomina.dc.html' },
+        { titulo: 'Contrato CT-118 vence', detalle: 'Local 4 · 12 dic 2026', href: 'Inmobiliaria.dc.html' }
+      ],
+      actividad: [
+        { hora: 'Hoy 10:15', doc: 'CV-000415', texto: 'Comprobante contabilizado desde la factura FV-2066', quien: 'jsuarez' },
+        { hora: 'Hoy 09:40', doc: 'RC-000918', texto: 'Recaudo de 2.400.000 aplicado a FV-2044', quien: 'mramirez' },
+        { hora: 'Ayer 17:02', doc: 'CE-000233', texto: 'Egreso a proveedor desde la cuenta ···4521', quien: 'lpardo' },
+        { hora: 'Ayer 11:20', doc: 'FV-2066', texto: 'Factura emitida a Colegio Altamar', quien: 'mramirez' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

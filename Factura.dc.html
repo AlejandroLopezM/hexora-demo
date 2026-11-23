@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>HEXORA · Factura FV-2050</title>
+<script src="./_runtime/react.js"></script>
+<script src="./_runtime/react-dom.js"></script>
+<script src="./_runtime/support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#F4F5F2}
+a{color:#1F5F4A}a:hover{color:#123D2F}
+</style>
+</helmet>
+<div style="min-height: 100vh; display: flex; flex-wrap: wrap; font-family: 'IBM Plex Sans', system-ui, sans-serif; color: #1B1F1D; background: #F4F5F2; font-size: 14px; font-variant-numeric: tabular-nums">
+  <div style="flex: 1 1 220px; max-width: 232px"><dc-import name="Nav" active="cartera" hint-size="232px,960px"></dc-import></div>
+  <main style="flex: 999 1 560px; min-width: 0; display: flex; flex-direction: column">
+    <header style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px; padding: 12px 28px; background: #FFFFFF; border-bottom: 1px solid #DCDFD9">
+      <a href="Cartera.dc.html" style="text-decoration: none">← Antigüedad de cartera</a>
+      <span style="color: #5C635F">/ FV-2050</span>
+      <span style="margin-left: auto; font-size: 13px; color: #5C635F">Comercial Andina Demo S.A.S. · María Ramírez</span>
+    </header>
+    <div style="padding: 24px 28px; display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-start">
+      <div style="flex: 999 1 600px; min-width: 0; background: #FFFFFF; border: 1px solid #DCDFD9; border-radius: 8px; padding: 24px; display: flex; flex-direction: column; gap: 18px">
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px">
+          <div>
+            <div style="display: flex; gap: 8px; align-items: center"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5C635F">FACTURA DE VENTA</span><span style="{{ estadoStyle }}">{{ estado }}</span></div>
+            <h1 style="margin: 6px 0 0; font-size: 24px; font-weight: 600">FV-2050 · Hotel Bahía Serena</h1>
+          </div>
+          <sc-if value="{{ puedeAnular }}" hint-placeholder-val="{{ true }}">
+            <button type="button" onClick="{{ abrir }}" style="align-self: flex-start; height: 36px; padding: 0 14px; border: 1px solid #B9412A; border-radius: 6px; background: #FFFFFF; color: #8C2F12; font: inherit; cursor: pointer">Anular factura…</button>
+          </sc-if>
+        </div>
+        <sc-if value="{{ anulada }}" hint-placeholder-val="{{ false }}">
+          <div role="status" style="padding: 12px 14px; border-radius: 6px; background: #FBE4DC; color: #6E2410; font-size: 13px">Anulada el 22 nov 2026 por María Ramírez. Motivo: «{{ motivo }}». Obligación OB-2050 revertida, comprobante CV-000412 compensado con CV-000421 y evento registrado. El número FV-2050 no se reutiliza.</div>
+        </sc-if>
+        <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px">
+          <div><div style="font-size: 12px; color: #5C635F">Emisión</div><div>05 oct 2026</div></div>
+          <div><div style="font-size: 12px; color: #5C635F">Vencimiento</div><div>04 nov 2026</div></div>
+          <div><div style="font-size: 12px; color: #5C635F">Importe inicial</div><div style="font-family: 'IBM Plex Mono', monospace">6.360.000</div></div>
+          <div><div style="font-size: 12px; color: #5C635F">Saldo pendiente</div><div style="font-family: 'IBM Plex Mono', monospace; font-weight: 600">{{ saldo }}</div></div>
+        </div>
+        <div role="tablist" aria-label="Vistas de la factura" style="display: flex; gap: 4px; border-bottom: 1px solid #DCDFD9">
+          <sc-for list="{{ tabs }}" as="t" hint-placeholder-count="3">
+            <button type="button" role="tab" aria-selected="{{ t.sel }}" onClick="{{ t.pick }}" style="{{ t.style }}">{{ t.label }}</button>
+          </sc-for>
+        </div>
+        <sc-if value="{{ tabFactura }}" hint-placeholder-val="{{ true }}">
+          <div style="overflow-x: auto">
+            <table style="width: 100%; border-collapse: collapse; font-size: 13px; min-width: 560px">
+              <thead><tr style="text-align: left; color: #5C635F; font-size: 12px"><th style="padding: 8px 0; font-weight: 500; border-bottom: 1px solid #DCDFD9">Concepto</th><th style="padding: 8px 0; font-weight: 500; border-bottom: 1px solid #DCDFD9">Efecto</th><th style="padding: 8px 0; font-weight: 500; border-bottom: 1px solid #DCDFD9; text-align: right">Base</th><th style="padding: 8px 0; font-weight: 500; border-bottom: 1px solid #DCDFD9; text-align: right">Valor</th></tr></thead>
+              <tbody style="font-family: 'IBM Plex Mono', monospace">
+                <tr><td style="padding: 10px 0; border-bottom: 1px solid #ECEEEA; font-family: 'IBM Plex Sans', sans-serif">Alojamiento de evento corporativo</td><td style="padding: 10px 0; border-bottom: 1px solid #ECEEEA; color: #5C635F; font-family: 'IBM Plex Sans', sans-serif">Línea</td><td style="padding: 10px 0; border-bottom: 1px solid #ECEEEA; text-align: right">—</td><td style="padding: 10px 0; border-bottom: 1px solid #ECEEEA; text-align: right">6.000.000</td></tr>
+                <tr><td style="padding: 10px 0; border-bottom: 1px solid #ECEEEA; font-family: 'IBM Plex Sans', sans-serif">Tarifa de ensayo A · 10 %</td><td style="padding: 10px 0; border-bottom: 1px solid #ECEEEA"><span style="padding: 2px 8px; border-radius: 4px; background: #E6EFEA; color: #123D2F; font-size: 12px; font-family: 'IBM Plex Sans', sans-serif">Suma</span></td><td style="padding: 10px 0; border-bottom: 1px solid #ECEEEA; text-align: right">6.000.000</td><td style="padding: 10px 0; border-bottom: 1px solid #ECEEEA; text-align: right">600.000</td></tr>
+                <tr><td style="padding: 10px 0; border-bottom: 1px solid #ECEEEA; font-family: 'IBM Plex Sans', sans-serif">Tarifa de ensayo B · 4 %</td><td style="padding: 10px 0; border-bottom: 1px solid #ECEEEA"><span style="padding: 2px 8px; border-radius: 4px; background: #FDEFD8; color: #74400A; font-size: 12px; font-family: 'IBM Plex Sans', sans-serif">Resta</span></td><td style="padding: 10px 0; border-bottom: 1px solid #ECEEEA; text-align: right">6.000.000</td><td style="padding: 10px 0; border-bottom: 1px solid #ECEEEA; text-align: right">− 240.000</td></tr>
+                <tr style="font-weight: 600"><td style="padding: 12px 0; font-family: 'IBM Plex Sans', sans-serif" colspan="3">Total emitido · igual a la obligación</td><td style="padding: 12px 0; text-align: right">6.360.000</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p style="margin: 0; font-size: 12px; color: #5C635F">El efecto de cada tarifa quedó fijado al emitir. Tarifas y efectos de ensayo: los reales los aprueba el contador de la empresa.</p>
+        </sc-if>
+        <sc-if value="{{ tabComprobante }}" hint-placeholder-val="{{ false }}">
+          <div style="font-size: 12px; color: #5C635F">CV-000412 · período 2026-10 · contabilizado 05 oct 10:15 · <span style="color: #1F5F4A; font-weight: 600">Balanceado</span></div>
+          <div style="overflow-x: auto">
+            <table style="width: 100%; border-collapse: collapse; font-size: 13px; min-width: 560px">
+              <thead><tr style="text-align: left; color: #5C635F; font-size: 12px"><th style="padding: 8px 0; font-weight: 500; border-bottom: 1px solid #DCDFD9">Cuenta</th><th style="padding: 8px 0; font-weight: 500; border-bottom: 1px solid #DCDFD9; text-align: right">Débito</th><th style="padding: 8px 0; font-weight: 500; border-bottom: 1px solid #DCDFD9; text-align: right">Crédito</th></tr></thead>
+              <tbody>
+                <sc-for list="{{ asiento }}" as="l" hint-placeholder-count="4">
+                  <tr><td style="padding: 10px 0; border-bottom: 1px solid #ECEEEA">{{ l.cuenta }}</td><td style="padding: 10px 0; border-bottom: 1px solid #ECEEEA; text-align: right; font-family: 'IBM Plex Mono', monospace">{{ l.d }}</td><td style="padding: 10px 0; border-bottom: 1px solid #ECEEEA; text-align: right; font-family: 'IBM Plex Mono', monospace">{{ l.c }}</td></tr>
+                </sc-for>
+                <tr style="font-weight: 600"><td style="padding: 12px 0">Totales</td><td style="padding: 12px 0; text-align: right; font-family: 'IBM Plex Mono', monospace">6.600.000</td><td style="padding: 12px 0; text-align: right; font-family: 'IBM Plex Mono', monospace">6.600.000</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </sc-if>
+        <sc-if value="{{ tabObligacion }}" hint-placeholder-val="{{ false }}">
+          <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px">
+            <div><div style="font-size: 12px; color: #5C635F">Obligación</div><div style="font-family: 'IBM Plex Mono', monospace">OB-2050</div></div>
+            <div><div style="font-size: 12px; color: #5C635F">Estado</div><div>{{ estadoOb }}</div></div>
+            <div><div style="font-size: 12px; color: #5C635F">Importe inicial</div><div style="font-family: 'IBM Plex Mono', monospace">6.360.000</div></div>
+            <div><div style="font-size: 12px; color: #5C635F">Aplicaciones</div><div>Ninguna</div></div>
+          </div>
+        </sc-if>
+      </div>
+      <aside style="flex: 1 1 280px; max-width: 340px; display: flex; flex-direction: column; gap: 16px">
+        <section style="background: #FFFFFF; border: 1px solid #DCDFD9; border-radius: 8px; padding: 20px">
+          <h2 style="margin: 0 0 14px; font-size: 14px">Trazabilidad</h2>
+          <ol style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px; font-size: 13px">
+            <sc-for list="{{ traza }}" as="p" hint-placeholder-count="4">
+              <li style="display: flex; gap: 10px"><span aria-hidden="true" style="{{ p.dot }}"></span><div><strong>{{ p.t }}</strong><div style="color: #5C635F">{{ p.d }}</div></div></li>
+            </sc-for>
+          </ol>
+        </section>
+        <section style="background: #FFF8EC; border: 1px solid #F0DDB5; border-radius: 8px; padding: 16px; font-size: 12px; color: #5B3E0E; line-height: 1.5">La anulación del prototipo es simulada: no llama a la API. En producción el servidor valida permiso, recaudos y período antes de escribir.</section>
+      </aside>
+    </div>
+  </main>
+  <sc-if value="{{ modal }}" hint-placeholder-val="{{ false }}">
+    <div style="position: fixed; inset: 0; background: rgba(18, 26, 23, 0.45); display: flex; align-items: center; justify-content: center; padding: 16px">
+      <div role="dialog" aria-modal="true" aria-labelledby="anular-titulo" style="width: 100%; max-width: 480px; background: #FFFFFF; border-radius: 10px; padding: 24px; display: flex; flex-direction: column; gap: 14px">
+        <h2 id="anular-titulo" style="margin: 0; font-size: 18px">Anular FV-2050</h2>
+        <p style="margin: 0; font-size: 13px; line-height: 1.5; color: #3E4542">Se revierte la obligación OB-2050, se compensa el comprobante CV-000412 y se registra el evento, todo en una sola operación. El número no vuelve a estar disponible.</p>
+        <div style="display: flex; flex-direction: column; gap: 4px; font-size: 13px"><span>✓ Saldo íntegro, sin recaudos aplicados</span><span>✓ Permiso billing.factura:anular</span><span>✓ Período 2026-11 abierto para la contrapartida</span></div>
+        <label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px">Motivo (mínimo 10 caracteres)
+          <textarea value="{{ motivo }}" onInput="{{ onMotivo }}" rows="3" style="font: inherit; padding: 8px; border: 1px solid #DCDFD9; border-radius: 6px; resize: vertical"></textarea>
+        </label>
+        <div style="display: flex; justify-content: flex-end; gap: 8px">
+          <button type="button" onClick="{{ cerrar }}" style="height: 38px; padding: 0 14px; border: 1px solid #DCDFD9; border-radius: 6px; background: #FFFFFF; font: inherit; cursor: pointer">Cancelar</button>
+          <button type="button" onClick="{{ confirmar }}" disabled="{{ noValido }}" style="{{ confirmStyle }}">Confirmar anulación</button>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1000}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { tab: 'factura', modal: false, motivo: '', anulada: false }; }
+  renderVals() {
+    var self = this, s = this.state;
+    var mkTab = function (id, label) {
+      var on = s.tab === id;
+      return { label: label, sel: on ? 'true' : 'false', pick: function () { self.setState({ tab: id }); },
+        style: 'padding: 10px 14px; border: 0; background: transparent; font: inherit; cursor: pointer; border-bottom: 2px solid ' + (on ? '#1F5F4A' : 'transparent') + '; color: ' + (on ? '#1B1F1D' : '#5C635F') + '; font-weight: ' + (on ? 600 : 400) };
+    };
+    var valido = s.motivo.trim().length >= 10;
+    var dot = function (on) { return 'width: 8px; height: 8px; margin-top: 6px; border-radius: 50%; flex: none; box-sizing: border-box; ' + (on ? 'background: #1F5F4A' : 'border: 2px solid #9AA19D'); };
+    var traza = [
+      { t: 'Emitida', d: '05 oct 10:12 · mramirez', dot: dot(true) },
+      { t: 'Obligación OB-2050', d: 'Importe inicial 6.360.000', dot: dot(true) },
+      { t: 'Contabilizada · CV-000412', d: '05 oct 10:15 · jsuarez', dot: dot(true) },
+      { t: 'Recaudos', d: 'Ninguno aplicado', dot: dot(false) }
+    ];
+    if (s.anulada) traza.push({ t: 'Anulada · CV-000421', d: '22 nov · mramirez · contrapartida en 2026-11', dot: 'width: 8px; height: 8px; margin-top: 6px; border-radius: 50%; flex: none; background: #A33A1A' });
+    return {
+      estado: s.anulada ? 'ANULADA' : 'EMITIDA',
+      estadoStyle: 'padding: 2px 8px; border-radius: 4px; font-size: 12px; font-weight: 600; ' + (s.anulada ? 'background: #FBE4DC; color: #8C2F12' : 'background: #E6EFEA; color: #123D2F'),
+      estadoOb: s.anulada ? 'Revertida' : 'Abierta · vencida 18 días',
+      saldo: s.anulada ? '0' : '6.360.000',
+      anulada: s.anulada, puedeAnular: !s.anulada, motivo: s.motivo,
+      tabs: [mkTab('factura', 'Factura'), mkTab('obligacion', 'Obligación OB-2050'), mkTab('comprobante', 'Comprobante CV-000412')],
+      tabFactura: s.tab === 'factura', tabObligacion: s.tab === 'obligacion', tabComprobante: s.tab === 'comprobante',
+      asiento: [
+        { cuenta: 'Cartera clientes · Hotel Bahía Serena', d: '6.360.000', c: '—' },
+        { cuenta: 'Ingreso del grupo de artículo', d: '—', c: '6.000.000' },
+        { cuenta: 'Tarifa A · asignación contable de ensayo', d: '—', c: '600.000' },
+        { cuenta: 'Tarifa B · asignación contable de ensayo', d: '240.000', c: '—' }
+      ],
+      traza: traza,
+      modal: s.modal,
+      abrir: function () { self.setState({ modal: true }); },
+      cerrar: function () { self.setState({ modal: false }); },
+      onMotivo: function (e) { self.setState({ motivo: e.target.value }); },
+      noValido: !valido,
+      confirmar: function () { if (valido) self.setState({ anulada: true, modal: false }); },
+      confirmStyle: 'height: 38px; padding: 0 14px; border: 0; border-radius: 6px; font: inherit; font-weight: 600; color: #FFFFFF; cursor: ' + (valido ? 'pointer' : 'not-allowed') + '; background: ' + (valido ? '#A33A1A' : '#C9B8B2')
+    };
+  }
+}
+</script>
+</body>
+</html>
